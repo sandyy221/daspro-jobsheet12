@@ -3,9 +3,13 @@ public class Rekursif_Percobaan2 {
    
     static int hitungPangkat (int x, int y) {
         if (y ==0) {
-            return(1);
+            return 1;
         } else {
-            return (x * hitungPangkat(x, y - 1));
+            int result = x * hitungPangkat(x, y - 1);
+            if (y!=1) {
+                System.out.print(x +"x" );
+            }
+            return result;
         }
     }
     public static void main(String[] args) {
@@ -17,6 +21,8 @@ public class Rekursif_Percobaan2 {
         bilangan = sc.nextInt();
         System.out.print("Pangkat: ");
         pangkat = sc.nextInt();
-        System.out.println(hitungPangkat(bilangan, pangkat));
+        System.out.println("Deret perhitungan: ");
+        int hasil = hitungPangkat(bilangan, pangkat);
+        System.out.println(" = " + hasil);
     }
 }
